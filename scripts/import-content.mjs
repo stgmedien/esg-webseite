@@ -13,6 +13,9 @@ const SCRAPE = new URL("../scrape/output/", import.meta.url).pathname;
 const OUT = new URL("../content/", import.meta.url).pathname;
 
 function triage(rec) {
+  // Alte Startseite nicht übernehmen — die neue Site hat eine eigene (und
+  // eine Content-Route "/index" kollidiert mit Nexts internem Index-Segment).
+  if (rec.rel === "index") return "DROP";
   const u = rec.url.toLowerCase();
   const drop = ["/seitenbaum", "/sitemap", "/plan/", "/36911-2", "/anmeldungen-3"];
   if (drop.some((d) => u.includes(d)) || rec.title === "(ohne Titel)") return "DROP";
