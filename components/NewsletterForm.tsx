@@ -60,10 +60,10 @@ export default function NewsletterForm() {
         className="animate-rise rounded-2xl border border-line bg-paper p-8 text-center shadow-sm"
         role="status"
       >
-        <div className="mx-auto mb-4 flex h-14 w-14 items-center justify-center rounded-full bg-gold/15 text-2xl text-gold">
+        <div className="mx-auto mb-4 flex h-14 w-14 items-center justify-center rounded-full bg-beere-soft text-2xl text-beere">
           ✦
         </div>
-        <h3 className="font-display text-2xl text-ink">Fast geschafft!</h3>
+        <h3 className="text-2xl font-extrabold tracking-tight text-ink">Fast geschafft!</h3>
         <p className="mt-3 text-ink-soft">
           Wir haben dir eine E-Mail geschickt. Bitte bestätige deine Anmeldung über den
           Link darin — erst dann bist du dabei.
@@ -84,7 +84,7 @@ export default function NewsletterForm() {
       noValidate
       className="rounded-2xl border border-line bg-paper p-6 shadow-sm sm:p-8"
     >
-      <h2 className="font-display text-2xl text-ink sm:text-3xl">Newsletter abonnieren</h2>
+      <h2 className="text-2xl font-extrabold tracking-tight text-ink sm:text-3xl">Newsletter abonnieren</h2>
       <p className="mt-2 text-sm text-ink-soft">
         Ein paarmal im Schuljahr. Kein Spam. Jederzeit mit einem Klick abbestellbar.
       </p>
@@ -105,7 +105,7 @@ export default function NewsletterForm() {
       <div className="mt-6 space-y-5">
         <div>
           <label htmlFor={`${formId}-email`} className="block text-sm font-medium text-ink">
-            E-Mail-Adresse <span className="text-burgundy">*</span>
+            E-Mail-Adresse <span className="text-rot">*</span>
           </label>
           <input
             id={`${formId}-email`}
@@ -118,10 +118,10 @@ export default function NewsletterForm() {
             aria-invalid={Boolean(emailErr)}
             aria-describedby={emailErr ? `${formId}-email-err` : undefined}
             placeholder="name@beispiel.de"
-            className="mt-1.5 w-full rounded-xl border border-line bg-white px-4 py-3 text-ink outline-none transition focus:border-gold focus:ring-2 focus:ring-gold/30"
+            className="mt-1.5 w-full rounded-xl border border-line bg-white px-4 py-3 text-ink outline-none transition focus:border-beere focus:ring-2 focus:ring-beere/25"
           />
           {emailErr && (
-            <p id={`${formId}-email-err`} role="alert" className="mt-1.5 text-sm text-burgundy">
+            <p id={`${formId}-email-err`} role="alert" className="mt-1.5 text-sm text-rot">
               {emailErr}
             </p>
           )}
@@ -138,7 +138,7 @@ export default function NewsletterForm() {
             value={firstName}
             onChange={(e) => setFirstName(e.target.value)}
             placeholder="Damit wir dich persönlich ansprechen können"
-            className="mt-1.5 w-full rounded-xl border border-line bg-white px-4 py-3 text-ink outline-none transition focus:border-gold focus:ring-2 focus:ring-gold/30"
+            className="mt-1.5 w-full rounded-xl border border-line bg-white px-4 py-3 text-ink outline-none transition focus:border-beere focus:ring-2 focus:ring-beere/25"
           />
         </div>
 
@@ -158,8 +158,8 @@ export default function NewsletterForm() {
                   className={[
                     "rounded-full border px-4 py-2 text-sm transition",
                     active
-                      ? "border-ink bg-ink text-paper"
-                      : "border-line bg-white text-ink-soft hover:border-ink/40",
+                      ? "border-beere bg-beere text-white"
+                      : "border-line bg-white text-ink-soft hover:border-beere/50",
                   ].join(" ")}
                 >
                   {AUDIENCE_LABEL[a]}
@@ -176,26 +176,26 @@ export default function NewsletterForm() {
               checked={consent}
               onChange={(e) => setConsent(e.target.checked)}
               aria-invalid={Boolean(consentErr)}
-              className="mt-0.5 h-5 w-5 shrink-0 rounded border-line text-gold accent-[var(--gold)]"
+              className="mt-0.5 h-5 w-5 shrink-0 rounded border-line text-gold accent-[var(--beere)]"
             />
             <span>
               Ich möchte den ESG-Newsletter erhalten und bin mit der Verarbeitung meiner
               Daten gemäß der{" "}
-              <Link href="/datenschutz" className="text-ink underline decoration-gold/60 underline-offset-2 hover:text-gold">
+              <Link href="/datenschutz" className="text-ink underline decoration-beere/50 underline-offset-2 hover:text-beere">
                 Datenschutzerklärung
               </Link>{" "}
               einverstanden. Die Einwilligung ist jederzeit widerrufbar.
             </span>
           </label>
           {consentErr && (
-            <p role="alert" className="mt-1.5 text-sm text-burgundy">
+            <p role="alert" className="mt-1.5 text-sm text-rot">
               {consentErr}
             </p>
           )}
         </div>
 
         {error && status === "error" && (
-          <p role="alert" className="rounded-lg bg-burgundy/10 px-4 py-3 text-sm text-burgundy">
+          <p role="alert" className="rounded-lg bg-rot/10 px-4 py-3 text-sm text-rot">
             {error}
           </p>
         )}
@@ -203,7 +203,7 @@ export default function NewsletterForm() {
         <button
           type="submit"
           disabled={status === "loading"}
-          className="group relative w-full overflow-hidden rounded-xl bg-ink px-6 py-3.5 text-base font-medium text-paper transition hover:bg-ink-soft disabled:cursor-not-allowed disabled:opacity-70"
+          className="group relative w-full overflow-hidden rounded-xl bg-beere px-6 py-3.5 text-base font-bold text-white transition hover:bg-beere-deep disabled:cursor-not-allowed disabled:opacity-70"
         >
           {status === "loading" ? "Wird gesendet …" : "Anmelden"}
         </button>

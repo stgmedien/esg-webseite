@@ -1,23 +1,12 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono, Fraunces } from "next/font/google";
+import { Open_Sans } from "next/font/google";
 import "./globals.css";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
+const openSans = Open_Sans({
+  variable: "--font-open-sans",
   subsets: ["latin"],
   display: "swap",
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-  display: "swap",
-});
-
-const fraunces = Fraunces({
-  variable: "--font-fraunces",
-  subsets: ["latin"],
-  display: "swap",
+  weight: ["400", "600", "700", "800"],
   style: ["normal", "italic"],
 });
 
@@ -26,15 +15,15 @@ const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://esg-guetersloh.de";
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   title: {
-    default: "ESG Gütersloh – Newsletter",
+    default: "ESG Gütersloh – Evangelisch Stiftisches Gymnasium",
     template: "%s · ESG Gütersloh",
   },
   description:
-    "Bleib in Verbindung mit dem Evangelisch Stiftischen Gymnasium Gütersloh – Neuigkeiten, Termine und Geschichten aus 175 Jahren Schulleben. Jetzt zum Newsletter anmelden.",
+    "Das Evangelisch Stiftische Gymnasium Gütersloh – seit 1851. MINT-EC-Schule, digitales Lernen, Musik und Theater: eine Schule mit Geschichte und Zukunft.",
   openGraph: {
-    title: "ESG Gütersloh – Newsletter",
+    title: "ESG Gütersloh – Evangelisch Stiftisches Gymnasium",
     description:
-      "Neuigkeiten, Termine und Geschichten aus 175 Jahren ESG Gütersloh – direkt in dein Postfach.",
+      "Eine Schule mit Geschichte und Zukunft: 175 Jahre ESG Gütersloh – MINT-EC, digitales Lernen, Musik und Theater.",
     locale: "de_DE",
     type: "website",
   },
@@ -46,10 +35,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html
-      lang="de"
-      className={`${geistSans.variable} ${geistMono.variable} ${fraunces.variable} h-full antialiased`}
-    >
+    <html lang="de" className={`${openSans.variable} h-full antialiased`}>
       <body className="min-h-full flex flex-col">{children}</body>
     </html>
   );

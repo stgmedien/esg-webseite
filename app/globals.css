@@ -1,21 +1,41 @@
 @import "tailwindcss";
 
 /*
-  ESG Gütersloh — Brand-Tokens.
-  Tiefes Tinten-Marineblau (Tradition) trifft Jubiläums-Gold (175 Jahre)
-  auf warmem Pergament. Editoriale Serife für Display, klare Sans für Text.
+  ESG Gütersloh — Design-Tokens.
+  Farben und Typografie (Open Sans) stammen aus dem Theme der bisherigen
+  Website (esg-2017) und werden hier modern weitergeführt:
+    Beere #833253  – Primärfarbe (Standard/Lehrkräfte)
+    Grün  #2a6749  – Schüler:innen
+    Blau  #325284  – Eltern
+    Gelb  #ffd600  – International
 */
 :root {
-  --background: #f5efe3;
-  --foreground: #11213d;
+  --background: #faf8f7;
+  --foreground: #241c20;
 
-  --ink: #0b1a33;
-  --ink-soft: #2c3a56;
-  --gold: #b3872d;
-  --gold-soft: #e6cd92;
-  --burgundy: #7a2b3a;
-  --paper: #fbf8f1;
-  --line: #e2d8c4;
+  --ink: #241c20;
+  --ink-soft: #5d5156;
+
+  --beere: #833253;
+  --beere-deep: #5e2138;
+  --beere-soft: #f4e8ed;
+
+  --gruen: #2a6749;
+  --gruen-soft: #e7f1ec;
+  --blau: #325284;
+  --blau-soft: #e9eef6;
+  --gelb: #ffd600;
+  --gelb-soft: #fff6c4;
+
+  /* Jubiläums-Amber (lesbare Variante des ESG-Gelbs) */
+  --gold: #9a7414;
+  --gold-soft: #f3e6b8;
+
+  /* Hinweis-/Fehlerrot der alten Website */
+  --rot: #c00418;
+
+  --paper: #ffffff;
+  --line: #e9e1e4;
 }
 
 @theme inline {
@@ -24,15 +44,25 @@
 
   --color-ink: var(--ink);
   --color-ink-soft: var(--ink-soft);
+
+  --color-beere: var(--beere);
+  --color-beere-deep: var(--beere-deep);
+  --color-beere-soft: var(--beere-soft);
+  --color-gruen: var(--gruen);
+  --color-gruen-soft: var(--gruen-soft);
+  --color-blau: var(--blau);
+  --color-blau-soft: var(--blau-soft);
+  --color-gelb: var(--gelb);
+  --color-gelb-soft: var(--gelb-soft);
   --color-gold: var(--gold);
   --color-gold-soft: var(--gold-soft);
-  --color-burgundy: var(--burgundy);
+  --color-rot: var(--rot);
+
   --color-paper: var(--paper);
   --color-line: var(--line);
 
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-  --font-display: var(--font-fraunces);
+  --font-sans: var(--font-open-sans);
+  --font-display: var(--font-open-sans);
 }
 
 body {
@@ -42,10 +72,14 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
-/* Feines Papier-/Kornraster für Tiefe im Hintergrund. */
+::selection {
+  background: var(--beere);
+  color: var(--paper);
+}
+
+/* Dezentes Punktraster für Flächen mit Tiefe */
 .bg-grain {
-  background-image:
-    radial-gradient(circle at 1px 1px, rgba(11, 26, 51, 0.05) 1px, transparent 0);
+  background-image: radial-gradient(circle at 1px 1px, rgba(131, 50, 83, 0.06) 1px, transparent 0);
   background-size: 22px 22px;
 }
 
@@ -65,3 +99,87 @@ body {
     transform: translateY(0);
   }
 }
+
+/* ── Artikel-Typografie für gerenderten Markdown-Content ─────────── */
+.prose-esg {
+  color: var(--ink-soft);
+  font-size: 1.0625rem;
+  line-height: 1.75;
+}
+.prose-esg h1,
+.prose-esg h2,
+.prose-esg h3,
+.prose-esg h4 {
+  color: var(--ink);
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  margin: 2em 0 0.6em;
+  line-height: 1.25;
+}
+.prose-esg h1 { font-size: 1.9rem; }
+.prose-esg h2 { font-size: 1.5rem; }
+.prose-esg h3 { font-size: 1.2rem; }
+.prose-esg h4 { font-size: 1.05rem; }
+.prose-esg > :first-child { margin-top: 0; }
+.prose-esg p { margin: 0 0 1.1em; }
+.prose-esg a {
+  color: var(--beere);
+  font-weight: 600;
+  text-decoration: underline;
+  text-decoration-color: color-mix(in srgb, var(--beere) 35%, transparent);
+  text-underline-offset: 3px;
+  transition: text-decoration-color 0.15s;
+}
+.prose-esg a:hover {
+  text-decoration-color: var(--beere);
+}
+.prose-esg ul,
+.prose-esg ol {
+  margin: 0 0 1.2em;
+  padding-left: 1.4em;
+}
+.prose-esg ul { list-style: disc; }
+.prose-esg ol { list-style: decimal; }
+.prose-esg li { margin: 0.35em 0; }
+.prose-esg li::marker { color: var(--beere); }
+.prose-esg blockquote {
+  border-left: 3px solid var(--beere);
+  background: var(--beere-soft);
+  border-radius: 0 12px 12px 0;
+  padding: 0.9em 1.2em;
+  margin: 1.4em 0;
+  color: var(--ink);
+}
+.prose-esg blockquote p { margin: 0; }
+.prose-esg img {
+  border-radius: 14px;
+  margin: 1.5em 0;
+  max-width: 100%;
+  height: auto;
+}
+.prose-esg p > a > img { margin: 0.4em 0; }
+.prose-esg hr {
+  border: none;
+  border-top: 1px solid var(--line);
+  margin: 2.2em 0;
+}
+.prose-esg table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1.5em 0;
+  font-size: 0.95rem;
+}
+.prose-esg th,
+.prose-esg td {
+  border: 1px solid var(--line);
+  padding: 0.55em 0.8em;
+  text-align: left;
+  vertical-align: top;
+}
+.prose-esg th {
+  background: var(--beere-soft);
+  color: var(--ink);
+  font-weight: 700;
+}
+.prose-esg strong { color: var(--ink); }
+.prose-esg em { font-style: italic; }
