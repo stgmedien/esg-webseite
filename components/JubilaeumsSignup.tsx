@@ -133,15 +133,12 @@ export default function JubilaeumsSignup() {
           </svg>
         </span>
         <h2 className="mt-5 text-2xl font-extrabold tracking-tight text-ink">
-          Fast geschafft!
+          Du bist dabei!
         </h2>
         <p className="mt-3 text-ink-soft">
-          Bestätige deine Anmeldung über den Link in der Mail an{" "}
-          <strong className="font-semibold break-all text-ink">{email.trim()}</strong> — erst
-          dann bist du dabei.
-        </p>
-        <p className="mt-2 text-sm text-ink-soft/80">
-          Keine Mail da? Wirf einen Blick in den Spam-Ordner.
+          <strong className="font-semibold break-all text-ink">{email.trim()}</strong> ist
+          eingetragen. Du erfährst ab jetzt zuerst, wenn es Neuigkeiten zum Jubiläumsband
+          und zum Film gibt.
         </p>
         <button
           type="button"
@@ -330,8 +327,7 @@ export default function JubilaeumsSignup() {
       </button>
 
       <p className="mt-4 text-center text-xs leading-relaxed text-ink-soft/80">
-        Du bekommst eine Bestätigungsmail (Double-Opt-In).
-        <br className="sm:hidden" /> Kein Spam, Abmeldung mit einem Klick.
+        Kein Spam, Abmeldung jederzeit mit einem Klick.
       </p>
     </form>
   );

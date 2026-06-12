@@ -29,7 +29,7 @@ export default function DatenschutzPage() {
 
           <section className="mt-8 space-y-3">
             <h2 className="font-display text-xl text-ink">
-              2. Anmeldung zum Alumni-Newsletter (Double-Opt-In)
+              2. Anmeldung zum Alumni-Newsletter
             </h2>
             <p>
               Für den Bezug unseres Alumni-Newsletters verarbeiten wir Ihren Vornamen und
@@ -37,16 +37,14 @@ export default function DatenschutzPage() {
               und die persönliche Ansprache im Newsletter.
             </p>
             <p>
-              Die Anmeldung erfolgt im sogenannten Double-Opt-In-Verfahren: Nach dem
-              Absenden des Formulars erhalten Sie eine E-Mail, in der Sie Ihre Anmeldung
-              durch Klick auf einen Bestätigungslink bestätigen. Erst danach werden Sie in
-              den Verteiler aufgenommen. So stellen wir sicher, dass die Anmeldung
-              tatsächlich von Ihnen stammt.
+              Mit dem Absenden des Formulars und dem Setzen des Häkchens willigen Sie in
+              den Erhalt des Newsletters ein und werden direkt in den Verteiler
+              aufgenommen.
             </p>
             <p>
               <strong>Rechtsgrundlage</strong> ist Ihre Einwilligung gemäß Art. 6 Abs. 1
               lit. a DSGVO. Zum Nachweis der Einwilligung protokollieren wir den Zeitpunkt
-              der Anmeldung und Bestätigung sowie die verwendete IP-Adresse.
+              der Anmeldung sowie die verwendete IP-Adresse.
             </p>
             <p>
               <strong>Widerruf:</strong> Sie können Ihre Einwilligung jederzeit mit Wirkung

@@ -78,6 +78,51 @@ export async function sendDoubleOptIn(params: {
   return { ok: false, status: res.status, code: body?.code, message };
 }
 
+/**
+ * Kontakt direkt anlegen/aktualisieren und der Liste hinzufügen —
+ * Single-Opt-In ohne Bestätigungsmail. Der Einwilligungsbeleg liegt in Neon.
+ */
+export async function createContact(params: {
+  email: string;
+  attributes?: Record<string, string | number>;
+}): Promise<DoiResult> {
+  const listId = Number(process.env.BREVO_LIST_ID);
+  if (!Number.isFinite(listId) || listId <= 0) {
+    return { ok: false, status: 0, message: "BREVO_LIST_ID fehlt oder ist ungültig." };
+  }
+
+  let res: Response;
+  try {
+    res = await fetch(`${BREVO_BASE}/contacts`, {
+      method: "POST",
+      headers: brevoHeaders(),
+      body: JSON.stringify({
+        email: params.email,
+        attributes: params.attributes,
+        listIds: [listId],
+        updateEnabled: true,
+      }),
+    });
+  } catch (e) {
+    return {
+      ok: false,
+      status: 0,
+      message: e instanceof Error ? e.message : "Netzwerkfehler",
+    };
+  }
+
+  // 201 = neu angelegt, 204 = bestehender Kontakt aktualisiert
+  if (res.status === 201 || res.status === 204) return { ok: true, already: res.status === 204 };
+
+  let body: { code?: string; message?: string } | null = null;
+  try {
+    body = (await res.json()) as { code?: string; message?: string };
+  } catch {
+    /* ignore */
+  }
+  return { ok: false, status: res.status, code: body?.code, message: body?.message };
+}
+
 /** Konto-Infos abrufen — Verbindungstest für das Setup-Skript. */
 export async function getBrevoAccount(): Promise<unknown> {
   const res = await fetch(`${BREVO_BASE}/account`, { headers: brevoHeaders() });

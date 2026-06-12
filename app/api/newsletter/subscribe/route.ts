@@ -3,7 +3,7 @@ import { sql } from "drizzle-orm";
 import { subscribeSchema, AUDIENCE_LABEL } from "@/lib/validation";
 import { db } from "@/lib/db";
 import { newsletterSubscribers } from "@/db/schema";
-import { sendDoubleOptIn, brevoConfigured } from "@/lib/brevo";
+import { createContact, brevoConfigured } from "@/lib/brevo";
 
 export const runtime = "nodejs";
 
@@ -89,7 +89,10 @@ export async function POST(req: Request) {
           email: normalizedEmail,
           firstName: firstName || null,
           audience: audience ?? null,
-          status: "pending",
+          // Single-Opt-In: Eintrag gilt mit Absenden als bestätigt;
+          // der Einwilligungsbeleg (Zeit/IP/UA) liegt in dieser Zeile.
+          status: "confirmed",
+          confirmedAt: new Date(),
           consentIp: ip === "unknown" ? null : ip,
           consentUserAgent: userAgent,
         })
@@ -109,16 +112,14 @@ export async function POST(req: Request) {
     }
   }
 
-  // 2) Brevo Double-Opt-In anstoßen.
+  // 2) Kontakt direkt in die Brevo-Liste eintragen (Single-Opt-In).
   if (brevoConfigured()) {
-    const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? new URL(req.url).origin;
-    const result = await sendDoubleOptIn({
+    const result = await createContact({
       email: normalizedEmail,
       attributes: {
         VORNAME: firstName || "",
         ZIELGRUPPE: audience ? AUDIENCE_LABEL[audience] : "",
       },
-      redirectionUrl: `${siteUrl}/newsletter/bestaetigt`,
     });
 
     if (!result.ok) {
