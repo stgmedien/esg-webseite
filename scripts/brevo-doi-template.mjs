@@ -42,7 +42,7 @@ const htmlContent = `<!DOCTYPE html><html lang="de"><body style="margin:0;paddin
 </td></tr>
 <tr><td style="padding:40px;">
   <h1 style="margin:0 0 16px;color:#833253;font-size:26px;">Nur noch ein Klick.</h1>
-  <p style="margin:0 0 24px;color:#5d5156;font-size:16px;line-height:1.6;">du möchtest die Jubiläumspost des Evangelisch Stiftischen Gymnasiums Gütersloh erhalten – Neuigkeiten zum Jubiläumsband und den Film „175 Jahre ESG in 175 Sekunden“ direkt ins Postfach. Bitte bestätige deine Anmeldung mit einem Klick:</p>
+  <p style="margin:0 0 24px;color:#5d5156;font-size:16px;line-height:1.6;">du möchtest den Alumni-Newsletter des Evangelisch Stiftischen Gymnasiums Gütersloh erhalten – Neuigkeiten zum Jubiläumsband und den Film „175 Jahre ESG in 175 Sekunden“ direkt ins Postfach. Bitte bestätige deine Anmeldung mit einem Klick:</p>
   <table role="presentation" cellpadding="0" cellspacing="0" style="margin:0 auto 24px;"><tr><td style="border-radius:12px;background-color:#833253;">
     <a href="{{ doubleoptin }}" style="display:inline-block;padding:14px 36px;color:#ffffff;font-size:16px;font-weight:bold;text-decoration:none;font-family:Arial,Helvetica,sans-serif;">Anmeldung bestätigen</a>
   </td></tr></table>
@@ -61,8 +61,8 @@ const res = await fetch("https://api.brevo.com/v3/smtp/templates", {
     accept: "application/json",
   },
   body: JSON.stringify({
-    templateName: "ESG Newsletter — Double-Opt-In (DE)",
-    subject: "Bitte bestätige deine Anmeldung zum ESG-Newsletter",
+    templateName: "ESG Alumni-Newsletter — Double-Opt-In (DE)",
+    subject: "Bitte bestätige deine Anmeldung — 175 Jahre ESG",
     sender: { name: senderName, email: senderEmail },
     tag: "optin",
     isActive: true,

@@ -32,12 +32,9 @@ export default function DatenschutzPage() {
               2. Anmeldung zum Alumni-Newsletter (Double-Opt-In)
             </h2>
             <p>
-              Für den Bezug unseres Alumni-Newsletters verarbeiten wir Ihren Vornamen, Ihre
-              E-Mail-Adresse und Ihre Telefonnummer. Vorname und E-Mail-Adresse nutzen wir
-              für den Versand und die persönliche Ansprache im Newsletter; die
-              Telefonnummer dient der persönlichen Kontaktaufnahme im Rahmen des
-              Alumni-Netzwerks und der Aktivitäten zum 175-jährigen Jubiläum
-              (z.&nbsp;B. Rückfragen zu Jubiläumsband und Veranstaltungen).
+              Für den Bezug unseres Alumni-Newsletters verarbeiten wir Ihren Vornamen und
+              Ihre E-Mail-Adresse. Diese Angaben nutzen wir ausschließlich für den Versand
+              und die persönliche Ansprache im Newsletter.
             </p>
             <p>
               Die Anmeldung erfolgt im sogenannten Double-Opt-In-Verfahren: Nach dem
