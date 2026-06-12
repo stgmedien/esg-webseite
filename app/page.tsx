@@ -231,15 +231,22 @@ export default function Home() {
           <div className="mx-auto grid max-w-7xl items-center gap-12 px-5 lg:grid-cols-2">
             <div>
               <p className="text-sm font-bold uppercase tracking-wider text-gelb">
-                Nichts verpassen
+                Die Jubiläumspost
               </p>
               <h2 className="mt-2 text-3xl font-extrabold tracking-tight sm:text-4xl">
-                Neuigkeiten direkt ins Postfach
+                Buch &amp; Film zum Jubiläum – du erfährst es zuerst
               </h2>
               <p className="mt-4 max-w-lg text-white/80">
-                Termine, Projekte, Jubiläums-Veranstaltungen: Unser Newsletter bringt das
-                Schulleben zu dir – ein paarmal im Schuljahr, kompakt und kuratiert.
+                Zum 175-jährigen Bestehen erscheint der Jubiläumsband – und der Film
+                „175 Jahre ESG in 175 Sekunden“. Trag dich ein: Neuigkeiten zum Buch und
+                den Film bekommst du direkt ins Postfach.
               </p>
+              <Link
+                href="/newsletter"
+                className="mt-5 inline-block text-sm font-bold text-gelb hover:underline"
+              >
+                Zur Anmeldeseite →
+              </Link>
               <p className="mt-6 text-sm text-white/60">
                 Tagesaktuelles gibt’s von der Schülerzeitung:{" "}
                 <a href="http://esblog.de" target="_blank" rel="noreferrer" className="font-bold text-gelb hover:underline">

@@ -33,23 +33,23 @@ if (!senderEmail) {
   process.exit(1);
 }
 
-const htmlContent = `<!DOCTYPE html><html lang="de"><body style="margin:0;padding:0;background-color:#f5efe3;font-family:Georgia,'Times New Roman',serif;">
-<table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="background-color:#f5efe3;padding:32px 16px;"><tr><td align="center">
-<table role="presentation" width="560" cellpadding="0" cellspacing="0" style="max-width:560px;width:100%;background-color:#fbf8f1;border:1px solid #e2d8c4;border-radius:16px;overflow:hidden;">
-<tr><td style="background-color:#0b1a33;padding:28px 40px;text-align:center;">
-  <div style="color:#fbf8f1;font-size:22px;font-weight:bold;letter-spacing:1px;">ESG Gütersloh</div>
-  <div style="color:#e6cd92;font-size:13px;margin-top:6px;">1851 – 2026 · 175 Jahre</div>
+const htmlContent = `<!DOCTYPE html><html lang="de"><body style="margin:0;padding:0;background-color:#faf8f7;font-family:Georgia,'Times New Roman',serif;">
+<table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="background-color:#faf8f7;padding:32px 16px;"><tr><td align="center">
+<table role="presentation" width="560" cellpadding="0" cellspacing="0" style="max-width:560px;width:100%;background-color:#ffffff;border:1px solid #e9e1e4;border-radius:16px;overflow:hidden;">
+<tr><td style="background-color:#833253;padding:28px 40px;text-align:center;">
+  <div style="color:#ffffff;font-size:22px;font-weight:bold;letter-spacing:1px;">ESG Gütersloh</div>
+  <div style="color:#ffd600;font-size:13px;margin-top:6px;">1851 – 2026 · 175 Jahre</div>
 </td></tr>
 <tr><td style="padding:40px;">
-  <h1 style="margin:0 0 16px;color:#0b1a33;font-size:26px;">Schön, dass du dabei sein willst!</h1>
-  <p style="margin:0 0 24px;color:#2c3a56;font-size:16px;line-height:1.6;">du möchtest den Newsletter des Evangelisch Stiftischen Gymnasiums Gütersloh erhalten – Neuigkeiten, Termine und Geschichten aus 175 Jahren Schulleben. Bitte bestätige deine Anmeldung mit einem Klick:</p>
-  <table role="presentation" cellpadding="0" cellspacing="0" style="margin:0 auto 24px;"><tr><td style="border-radius:12px;background-color:#0b1a33;">
-    <a href="{{ doubleoptin }}" style="display:inline-block;padding:14px 36px;color:#fbf8f1;font-size:16px;font-weight:bold;text-decoration:none;font-family:Arial,Helvetica,sans-serif;">Anmeldung bestätigen</a>
+  <h1 style="margin:0 0 16px;color:#833253;font-size:26px;">Nur noch ein Klick.</h1>
+  <p style="margin:0 0 24px;color:#5d5156;font-size:16px;line-height:1.6;">du möchtest die Jubiläumspost des Evangelisch Stiftischen Gymnasiums Gütersloh erhalten – Neuigkeiten zum Jubiläumsband und den Film „175 Jahre ESG in 175 Sekunden“ direkt ins Postfach. Bitte bestätige deine Anmeldung mit einem Klick:</p>
+  <table role="presentation" cellpadding="0" cellspacing="0" style="margin:0 auto 24px;"><tr><td style="border-radius:12px;background-color:#833253;">
+    <a href="{{ doubleoptin }}" style="display:inline-block;padding:14px 36px;color:#ffffff;font-size:16px;font-weight:bold;text-decoration:none;font-family:Arial,Helvetica,sans-serif;">Anmeldung bestätigen</a>
   </td></tr></table>
-  <p style="margin:0;color:#2c3a56;font-size:13px;line-height:1.6;">Du hast dich nicht angemeldet? Dann kannst du diese E-Mail einfach ignorieren – ohne Bestätigung passiert nichts.</p>
+  <p style="margin:0;color:#5d5156;font-size:13px;line-height:1.6;">Du hast dich nicht angemeldet? Dann kannst du diese E-Mail einfach ignorieren – ohne Bestätigung passiert nichts.</p>
 </td></tr>
-<tr><td style="border-top:1px solid #e2d8c4;padding:20px 40px;text-align:center;">
-  <p style="margin:0;color:#8a8270;font-size:12px;line-height:1.5;">Evangelisch Stiftisches Gymnasium Gütersloh · Feldstraße 13 · 33330 Gütersloh</p>
+<tr><td style="border-top:1px solid #e9e1e4;padding:20px 40px;text-align:center;">
+  <p style="margin:0;color:#9a8f94;font-size:12px;line-height:1.5;">Evangelisch Stiftisches Gymnasium Gütersloh · Feldstraße 13 · 33330 Gütersloh</p>
 </td></tr>
 </table></td></tr></table></body></html>`;
 

@@ -18,10 +18,12 @@ export default function ConfirmedPage() {
           <div className="mx-auto mb-5 flex h-16 w-16 items-center justify-center rounded-full bg-gold/15 text-3xl text-gold">
             ✓
           </div>
-          <h1 className="font-display text-3xl text-ink">Willkommen an Bord!</h1>
+          <h1 className="text-3xl font-extrabold tracking-tight text-ink">Du bist dabei!</h1>
           <p className="mt-4 text-ink-soft">
-            Deine Anmeldung ist bestätigt. Du bekommst ab jetzt Neuigkeiten, Termine und
-            Geschichten aus 175 Jahren ESG Gütersloh – direkt in dein Postfach.
+            Deine Anmeldung ist bestätigt. Du erfährst ab jetzt zuerst, wenn es Neuigkeiten
+            zum <strong className="text-ink">Jubiläumsband</strong> gibt – und bekommst den
+            Film <strong className="text-ink">„175 Jahre ESG in 175 Sekunden“</strong> direkt
+            in dein Postfach.
           </p>
           <Link
             href="/"
