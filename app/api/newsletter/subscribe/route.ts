@@ -59,7 +59,7 @@ export async function POST(req: Request) {
     );
   }
 
-  const { email, firstName, audience, consent, website } = parsed.data;
+  const { email, firstName, phone, audience, consent, website } = parsed.data;
 
   // Honeypot: stillschweigend akzeptieren, aber nichts tun.
   if (website && website.length > 0) {
@@ -88,6 +88,7 @@ export async function POST(req: Request) {
         .values({
           email: normalizedEmail,
           firstName: firstName || null,
+          phone: phone || null,
           audience: audience ?? null,
           status: "pending",
           consentIp: ip === "unknown" ? null : ip,
@@ -98,6 +99,7 @@ export async function POST(req: Request) {
           set: {
             audience: sql`coalesce(excluded.audience, ${newsletterSubscribers.audience})`,
             firstName: sql`coalesce(excluded.first_name, ${newsletterSubscribers.firstName})`,
+            phone: sql`coalesce(excluded.phone, ${newsletterSubscribers.phone})`,
             consentIp: sql`excluded.consent_ip`,
             consentUserAgent: sql`excluded.consent_user_agent`,
             updatedAt: new Date(),
@@ -116,6 +118,7 @@ export async function POST(req: Request) {
       email: normalizedEmail,
       attributes: {
         VORNAME: firstName || "",
+        TELEFON: phone || "",
         ZIELGRUPPE: audience ? AUDIENCE_LABEL[audience] : "",
       },
       redirectionUrl: `${siteUrl}/newsletter/bestaetigt`,

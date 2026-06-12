@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
-import SiteHeader from "@/components/SiteHeader";
-import SiteFooter from "@/components/SiteFooter";
+import MinimalShell from "@/components/MinimalShell";
 
 export const metadata: Metadata = {
   title: "Impressum",
@@ -9,9 +8,7 @@ export const metadata: Metadata = {
 
 export default function ImpressumPage() {
   return (
-    <>
-      <SiteHeader />
-      <main className="bg-grain flex-1">
+    <MinimalShell>
         <article className="prose-esg mx-auto max-w-3xl px-5 py-16">
           <h1 className="font-display text-4xl text-ink">Impressum</h1>
 
@@ -59,8 +56,6 @@ export default function ImpressumPage() {
             </section>
           </div>
         </article>
-      </main>
-      <SiteFooter />
-    </>
+    </MinimalShell>
   );
 }

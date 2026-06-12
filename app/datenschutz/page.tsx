@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
-import SiteHeader from "@/components/SiteHeader";
-import SiteFooter from "@/components/SiteFooter";
+import MinimalShell from "@/components/MinimalShell";
 
 export const metadata: Metadata = {
   title: "Datenschutzerklärung",
@@ -10,9 +9,7 @@ export const metadata: Metadata = {
 
 export default function DatenschutzPage() {
   return (
-    <>
-      <SiteHeader />
-      <main className="bg-grain flex-1">
+    <MinimalShell>
         <article className="mx-auto max-w-3xl px-5 py-16 text-ink-soft">
           <h1 className="font-display text-4xl text-ink">Datenschutzerklärung</h1>
 
@@ -32,13 +29,15 @@ export default function DatenschutzPage() {
 
           <section className="mt-8 space-y-3">
             <h2 className="font-display text-xl text-ink">
-              2. Anmeldung zum Newsletter (Double-Opt-In)
+              2. Anmeldung zum Alumni-Newsletter (Double-Opt-In)
             </h2>
             <p>
-              Für den Bezug unseres Newsletters verarbeiten wir Ihre E-Mail-Adresse sowie –
-              sofern angegeben – Ihren Vornamen und Ihre Zielgruppe (z. B. Eltern,
-              Schüler:in, Ehemalige:r). Diese Angaben nutzen wir ausschließlich für den
-              Versand und die Personalisierung des Newsletters.
+              Für den Bezug unseres Alumni-Newsletters verarbeiten wir Ihren Vornamen, Ihre
+              E-Mail-Adresse und Ihre Telefonnummer. Vorname und E-Mail-Adresse nutzen wir
+              für den Versand und die persönliche Ansprache im Newsletter; die
+              Telefonnummer dient der persönlichen Kontaktaufnahme im Rahmen des
+              Alumni-Netzwerks und der Aktivitäten zum 175-jährigen Jubiläum
+              (z.&nbsp;B. Rückfragen zu Jubiläumsband und Veranstaltungen).
             </p>
             <p>
               Die Anmeldung erfolgt im sogenannten Double-Opt-In-Verfahren: Nach dem
@@ -106,8 +105,6 @@ export default function DatenschutzPage() {
             </p>
           </section>
         </article>
-      </main>
-      <SiteFooter />
-    </>
+    </MinimalShell>
   );
 }

@@ -28,6 +28,7 @@ export const newsletterSubscribers = pgTable("newsletter_subscribers", {
   email: text("email").notNull().unique(),
   firstName: text("first_name"),
   lastName: text("last_name"),
+  phone: text("phone"),
   audience: audienceEnum("audience"),
   status: subscriberStatusEnum("status").notNull().default("pending"),
   brevoContactId: text("brevo_contact_id"),

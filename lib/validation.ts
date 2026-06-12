@@ -20,7 +20,15 @@ export const AUDIENCE_LABEL: Record<Audience, string> = {
 
 export const subscribeSchema = z.object({
   email: z.email("Bitte gib eine gültige E-Mail-Adresse ein.").max(254),
-  firstName: z.string().trim().max(100).optional(),
+  firstName: z
+    .string({ error: "Bitte gib deinen Vornamen an." })
+    .trim()
+    .min(2, "Bitte gib deinen Vornamen an.")
+    .max(100),
+  phone: z
+    .string({ error: "Bitte gib deine Telefonnummer an." })
+    .trim()
+    .regex(/^\+?[0-9][0-9 ()/\-.]{5,24}$/, "Bitte gib eine gültige Telefonnummer an."),
   audience: z.enum(AUDIENCES).optional(),
   consent: z.boolean(),
   /** Honeypot — muss leer bleiben (Bot-Schutz). */
