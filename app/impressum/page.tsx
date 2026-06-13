@@ -20,7 +20,7 @@ export default function ImpressumPage() {
             <p>
               Evangelisch Stiftisches Gymnasium Gütersloh
               <br />
-              Daltropstraße 15
+              Feldstraße 13
               <br />
               33330 Gütersloh
             </p>
@@ -58,7 +58,7 @@ export default function ImpressumPage() {
               <br />
               Evangelisch Stiftisches Gymnasium Gütersloh
               <br />
-              Daltropstraße 15, 33330 Gütersloh
+              Feldstraße 13, 33330 Gütersloh
             </p>
           </section>
 

@@ -35,7 +35,7 @@ export default function DatenschutzPage() {
             <br />
             vertreten durch die Schulleitung OStD Martin Fugmann
             <br />
-            Daltropstraße 15, 33330 Gütersloh
+            Feldstraße 13, 33330 Gütersloh
             <br />
             Telefon: +49 5241 989050, Telefax: +49 5241 9890522
             <br />
